@@ -1,0 +1,12 @@
+2022/10/13-12:01:36.372 105c Reusing MANIFEST E:\fullstack-js\wa-api\.wwebjs_auth\session-client-one\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
+2022/10/13-12:01:36.372 105c Recovering log #73
+2022/10/13-12:01:36.410 105c Reusing old log E:\fullstack-js\wa-api\.wwebjs_auth\session-client-one\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/000073.log 
+2022/10/13-12:01:36.759 e28 Level-0 table #78: started
+2022/10/13-12:01:36.779 e28 Level-0 table #78: 1355546 bytes OK
+2022/10/13-12:01:36.780 e28 Delete type=0 #73
+2022/10/13-12:01:46.828 3eb4 Compacting 1@1 + 1@2 files
+2022/10/13-12:01:46.871 3eb4 Generated table #79@1: 13249 keys, 602650 bytes
+2022/10/13-12:01:46.871 3eb4 Compacted 1@1 + 1@2 files => 602650 bytes
+2022/10/13-12:01:46.871 3eb4 compacted to: files[ 0 0 1 0 0 0 0 ]
+2022/10/13-12:01:46.871 3eb4 Delete type=2 #75
+2022/10/13-12:01:46.871 3eb4 Delete type=2 #78
