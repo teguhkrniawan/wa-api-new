@@ -1,12 +1,14 @@
-2022/10/13-12:01:36.372 105c Reusing MANIFEST E:\fullstack-js\wa-api\.wwebjs_auth\session-client-one\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
-2022/10/13-12:01:36.372 105c Recovering log #73
-2022/10/13-12:01:36.410 105c Reusing old log E:\fullstack-js\wa-api\.wwebjs_auth\session-client-one\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/000073.log 
-2022/10/13-12:01:36.759 e28 Level-0 table #78: started
-2022/10/13-12:01:36.779 e28 Level-0 table #78: 1355546 bytes OK
-2022/10/13-12:01:36.780 e28 Delete type=0 #73
-2022/10/13-12:01:46.828 3eb4 Compacting 1@1 + 1@2 files
-2022/10/13-12:01:46.871 3eb4 Generated table #79@1: 13249 keys, 602650 bytes
-2022/10/13-12:01:46.871 3eb4 Compacted 1@1 + 1@2 files => 602650 bytes
-2022/10/13-12:01:46.871 3eb4 compacted to: files[ 0 0 1 0 0 0 0 ]
-2022/10/13-12:01:46.871 3eb4 Delete type=2 #75
-2022/10/13-12:01:46.871 3eb4 Delete type=2 #78
+2022/10/14-14:49:44.238 3ed8 Reusing MANIFEST E:\fullstack-js\wa-api\.wwebjs_auth\session-client-one\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
+2022/10/14-14:49:44.239 3ed8 Recovering log #180
+2022/10/14-14:49:44.243 3ed8 Reusing old log E:\fullstack-js\wa-api\.wwebjs_auth\session-client-one\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/000180.log 
+2022/10/14-14:49:44.243 3ed8 Delete type=2 #178
+2022/10/14-14:49:46.739 291c Level-0 table #185: started
+2022/10/14-14:49:46.742 291c Level-0 table #185: 48193 bytes OK
+2022/10/14-14:49:46.743 291c Delete type=0 #180
+2022/10/14-14:49:46.743 291c Manual compaction at level-0 from '\x003\x00\x00\x00' @ 72057594037927935 : 1 .. '\x004\x00\x00\x00' @ 0 : 0; will stop at '\x003\x06 \x03\x00\x00\x00\x00\x00\x80V@\x00\x01\x0b\x00I\x00d\x00T\x00t\x00l\x009\x000\x00D\x00a\x00y\x00s' @ 989273 : 1
+2022/10/14-14:49:46.743 291c Compacting 1@0 + 1@1 files
+2022/10/14-14:49:46.754 291c Generated table #186@0: 4903 keys, 105366 bytes
+2022/10/14-14:49:46.754 291c Compacted 1@0 + 1@1 files => 105366 bytes
+2022/10/14-14:49:46.754 291c compacted to: files[ 0 1 1 0 0 0 0 ]
+2022/10/14-14:49:46.754 291c Delete type=2 #185
+2022/10/14-14:49:46.754 291c Manual compaction at level-0 from '\x003\x06 \x03\x00\x00\x00\x00\x00\x80V@\x00\x01\x0b\x00I\x00d\x00T\x00t\x00l\x009\x000\x00D\x00a\x00y\x00s' @ 989273 : 1 .. '\x004\x00\x00\x00' @ 0 : 0; will stop at (end)

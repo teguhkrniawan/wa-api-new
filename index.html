@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhatsApp API</title>
+</head>
+<body>
+    <div class="app" id="app">
+        <h1>Whatsapp API</h1>
+        <p>beta version</p>
+        
+        <!-- img -->
+        <img src="" id="qrcode">
+
+        <!-- logs -->
+        <h3>logs: </h3>
+        <ul class="logs">
+        </ul>
+    </div>
+</body>
+
+<!-- jQuery min js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<!-- socket io -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.1/socket.io.min.js"></script>
+ <!-- script  -->
+ <script>
+    $(document).ready(function(){
+        var socket = io.connect('http://localhost:3001', {path: '/socket.io'});
+        socket.on("message", function(msg){
+            $('.logs').append($('<li>').text(msg))
+        });
+        socket.on('qrurl', function(src){
+            // console.log(src)
+            $('#qrcode').attr('src', src)
+        })
+    });
+ </script>
+
+</html>
