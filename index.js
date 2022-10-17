@@ -27,7 +27,9 @@ app.use(express.urlencoded({
 const client = new Client({
   puppeteer: {
     headless: true,
-    args: []
+    args: [
+      '--no-sandbox', '--disable-setuid-sandbox', '--disable-extensions'
+    ]
   },
   authStrategy: new LocalAuth({
     clientId: "client-one",
