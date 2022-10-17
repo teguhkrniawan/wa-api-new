@@ -27,8 +27,9 @@ app.use(express.urlencoded({
 const client = new Client({
   puppeteer: {
     headless: true,
+    executablePath: '/snap/bin/chromium',
     args: [
-      '--no-sandbox', '--disable-setuid-sandbox', '--disable-extensions'
+      '--no-sandbox'
     ]
   },
   authStrategy: new LocalAuth({
@@ -64,6 +65,12 @@ client.on("message", (msg) => {
 // apabila logout
 client.on("disconnected", (reason) => {
   console.log("Client was logged out", reason);
+});
+
+client.on("qr", (qr) => {
+  qrcode.toDataURL(qr, (err, url) => {
+    console.log('url: ', url)
+  });
 });
 
 // routing app
@@ -116,12 +123,12 @@ io.on("connection", function (socket) {
   });
 
   // apabila qr code telah diterima
-  client.on("qr", (qr) => {
-    qrcode.toDataURL(qr, (err, url) => {
-      socket.emit("qrurl", url);
-      socket.emit("message", "Scan QR for use whatsapp!");
-    });
-  });
+  // client.on("qr", (qr) => {
+  //   qrcode.toDataURL(qr, (err, url) => {
+  //     socket.emit("qrurl", url);
+  //     socket.emit("message", "Scan QR for use whatsapp!");
+  //   });
+  // });
 });
 
 // jalankan aplikasi

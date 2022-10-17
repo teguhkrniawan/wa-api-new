@@ -1,5 +1,0 @@
-[1017/141029.375:ERROR:backend_impl.cc(1041)] Critical error found -8
-[1017/141029.375:ERROR:entry_impl.cc(1076)] No file for c1030386
-[1017/141029.375:WARNING:storage_block-inl.h(147)] Failed data load.
-[1017/141032.805:INFO:CONSOLE(7)] "Another connection wants to delete database 'wawc'. Closing db now to resume the delete request.", source: https://web.whatsapp.com/vendor1~bootstrap_qr.c9c5ee1de2879796b538.js (7)
-[1017/141043.294:INFO:CONSOLE(1)] "Uncaught (in promise) TypeError: Failed to execute 'put' on 'Cache': Partial response (status code 206) is unsupported", source: https://web.whatsapp.com/serviceworker.js (1)
