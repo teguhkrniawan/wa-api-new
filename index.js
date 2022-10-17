@@ -1,5 +1,5 @@
 // import whtasapp-api js
-const { Client, LegacySessionAuth, LocalAuth } = require("whatsapp-web.js");
+const { Client, LegacySessionAuth, LocalAuth, Buttons } = require("whatsapp-web.js");
 // import terminal qr code
 // const qrcode = require("qrcode-terminal");
 const qrcode = require("qrcode");
@@ -17,6 +17,12 @@ const server = http.createServer(app);
 
 // connect ke socket sever
 const io = socketIO(server);
+
+// untuk http 
+app.use(express.json());
+app.use(express.urlencoded({
+  extended: true
+}));
 
 const client = new Client({
   puppeteer: {
@@ -67,6 +73,34 @@ app.get("/", (req, res) => {
   res.sendFile("index.html", {
     root: __dirname,
   });
+});
+
+// send message
+app.post('/kirim-pesan', async (req, res) => {
+
+  const number = req.body.number;
+  const message = "Halo saya pesan dari server \n jangan lupa ingatkan *Approve AkuKojo YGY*";
+
+
+  const button = new Buttons('Kunjungi Situs', [{id: 'button1', body: 'Info'}])
+
+  // client.sendMessage(number, new List('Body text/ MessageMedia instance', 'List message button text', [{title: 'sectionTitle', rows: [{id: 'customId', title: 'ListItem2', description: 'desc'}, {title: 'ListItem2'}]}] 'Title here, doesn\'t work with media', 'Footer here'), {caption: 'if you used a MessageMedia instance, use the caption here'})
+
+
+  const sended = await client.sendMessage(number, message)
+  if(sended){
+    return res.status(200).json({
+      msg: 'berhasil',
+      data: sended
+    })
+  }
+  else {
+    return res.status(400).json({
+      msg:'gagal',
+      data: 'error aja'
+    })
+  }
+ 
 });
 
 // socket io

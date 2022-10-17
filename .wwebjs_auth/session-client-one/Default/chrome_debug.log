@@ -1,4 +1,4 @@
-[1014/145122.961:INFO:CONSOLE(7)] "Another connection wants to delete database 'wawc'. Closing db now to resume the delete request.", source: https://web.whatsapp.com/vendor1~bootstrap_qr.c9c5ee1de2879796b538.js (7)
-[1014/145133.306:INFO:CONSOLE(1)] "Uncaught (in promise) TypeError: Failed to execute 'put' on 'Cache': Partial response (status code 206) is unsupported", source: https://web.whatsapp.com/serviceworker.js (1)
-[1014/145548.798:INFO:CONSOLE(1)] "Uncaught (in promise) TypeError: Failed to execute 'put' on 'Cache': Partial response (status code 206) is unsupported", source: https://web.whatsapp.com/serviceworker.js (1)
-[1014/145548.908:INFO:CONSOLE(1)] "Uncaught (in promise) TypeError: Failed to execute 'put' on 'Cache': Partial response (status code 206) is unsupported", source: https://web.whatsapp.com/serviceworker.js (1)
+[1017/105307.912:INFO:CONSOLE(1)] "Another connection wants to delete database 'wawc_db_enc'. Closing db now to resume the delete request.", source: https://web.whatsapp.com/WAWebWorker.3d5bb74c3e9d9bdab159.worker.js (1)
+[1017/105307.913:INFO:CONSOLE(7)] "Another connection wants to delete database 'wawc_db_enc'. Closing db now to resume the delete request.", source: https://web.whatsapp.com/vendor1~bootstrap_qr.c9c5ee1de2879796b538.js (7)
+[1017/105308.188:INFO:CONSOLE(1)] "Another connection wants to delete database 'fts-storage'. Closing db now to resume the delete request.", source: https://web.whatsapp.com/WAWebWorker.3d5bb74c3e9d9bdab159.worker.js (1)
+[1017/105308.190:INFO:CONSOLE(1)] "Another connection wants to delete database 'model-storage'. Closing db now to resume the delete request.", source: https://web.whatsapp.com/WAWebWorker.3d5bb74c3e9d9bdab159.worker.js (1)
