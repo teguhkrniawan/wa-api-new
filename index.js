@@ -27,10 +27,10 @@ app.use(express.urlencoded({
 const client = new Client({
   puppeteer: {
     headless: true,
-    executablePath: '/snap/bin/chromium',
-    args: [
-      '--no-sandbox'
-    ]
+    // executablePath: '/snap/bin/chromium',
+    // args: [
+    //   '--no-sandbox'
+    // ]
   },
   authStrategy: new LocalAuth({
     clientId: "client-one",
@@ -45,9 +45,9 @@ client.on("loading_screen", (percent, message) => {
 });
 
 // apabila sudah terautentikasi
-client.on("authenticated", (session) => {
+client.on("authenticated", () => {
   console.log("AUTHENTICATED");
-  sessionCfg = session;
+  // sessionCfg = session;
 });
 
 client.on("auth_failure", (msg) => {
@@ -73,6 +73,10 @@ client.on("qr", (qr) => {
   });
 });
 
+client.on("error", (err) => {
+  console.log('error', err.message)
+});
+
 // routing app
 app.get("/", (req, res) => {
   // res.status(200).json({
@@ -89,10 +93,10 @@ app.get("/", (req, res) => {
 app.post('/kirim-pesan', async (req, res) => {
 
   const number = req.body.number;
-  const message = "Halo saya pesan dari server \n jangan lupa ingatkan *Approve AkuKojo YGY*";
+  const message = "*Halo Saya Antan*\nMaskot *Diskominfotiks Rohil*\nPesan ini bersifat sistematis\nJangan lupa approve laporan kinerja pegawai di Aplikasi AkuKojo hari ini\nTerimakasih";
 
 
-  const button = new Buttons('Kunjungi Situs', [{id: 'button1', body: 'Info'}])
+  // const button = new Buttons(message, [{id: 'button1', body: 'KUNJUNGI SITUS'}])
 
   // client.sendMessage(number, new List('Body text/ MessageMedia instance', 'List message button text', [{title: 'sectionTitle', rows: [{id: 'customId', title: 'ListItem2', description: 'desc'}, {title: 'ListItem2'}]}] 'Title here, doesn\'t work with media', 'Footer here'), {caption: 'if you used a MessageMedia instance, use the caption here'})
 
@@ -122,13 +126,17 @@ io.on("connection", function (socket) {
     socket.emit("message", "Whatsapp is ready!");
   });
 
+  client.on("authenticated", () => {
+    socket.emit('message', 'Telah login!');
+  });
+
   // apabila qr code telah diterima
-  // client.on("qr", (qr) => {
-  //   qrcode.toDataURL(qr, (err, url) => {
-  //     socket.emit("qrurl", url);
-  //     socket.emit("message", "Scan QR for use whatsapp!");
-  //   });
-  // });
+  client.on("qr", (qr) => {
+    qrcode.toDataURL(qr, (err, url) => {
+      socket.emit("qrurl", url);
+      socket.emit("message", "Scan QR for use whatsapp!");
+    });
+  });
 });
 
 // jalankan aplikasi
